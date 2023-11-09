@@ -6,9 +6,10 @@ const { getAge, getUUID } = require('./plugins');
 // const { buildMakePerson } = require('./js-foundation/05-factory');
 const getPokemonById = require('./js-foundation/06-promises');
 
-getPokemonById(4, (pokemon) => {
-  console.log({ pokemon });
-});
+getPokemonById(4)
+  .then((pokemon) => console.log({ pokemon }))
+  .catch((err) => console.log('Por favor intente de nuevo'))
+  .finally(() => console.log('Finalmente'));
 
 // ! Referencia a la función factory y uso
 // const makePerson = buildMakePerson({ getUUID, getAge });
